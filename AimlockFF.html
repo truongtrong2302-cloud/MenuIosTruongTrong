@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aimlock Control</title>
+  <style>
+    body {
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      height:100vh; margin:0; background:#000; color:#fff; font-family:sans-serif;
+    }
+    img {
+      width:120px; height:120px; border-radius:50%; margin-bottom:20px;
+    }
+    h2 { margin:10px; font-size:22px; color:#fff; }
+    button {
+      margin:15px; padding:15px 25px; font-size:18px; border:none;
+      border-radius:8px; cursor:pointer; transition:0.3s;
+    }
+    #aimlockBtn.off { background:#ff4444; color:#fff; }
+    #aimlockBtn.on { background:#44aa44; color:#fff; }
+  </style>
+</head>
+<body>
+  <h2>By Truong Trong</h2>
+  <img src="naruto-icon.jpeg" alt="Naruto Icon">
+  <button id="aimlockBtn" class="off">🔘 Aimlock: OFF</button>
+
+  <script>
+    let aimlockOn = false;
+    const btn = document.getElementById("aimlockBtn");
+    btn.onclick = function(){
+      aimlockOn = !aimlockOn;
+      btn.textContent = "🔘 Aimlock: " + (aimlockOn ? "ON" : "OFF");
+      btn.className = aimlockOn ? "on" : "off";
+    };
+  </script>
+</body>
+</html>
